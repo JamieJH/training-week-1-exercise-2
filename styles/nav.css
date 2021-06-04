@@ -1,0 +1,126 @@
+
+header {
+    background:linear-gradient(90deg, rgb(0 0 0 / 30%), rgb(86 86 86 / 0%)), url("../assets/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 105vh;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+}
+
+nav {
+    height: 60px;
+    display: none;
+}
+
+header li {
+    display: inline-block;
+    margin-right: 50px;
+    padding-bottom: 5px;
+    transition: var(--transition);
+    margin-bottom: 50px;
+}
+
+header a {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+aside {
+    width: 150px;
+    background-color: #f26522;
+    height: 100vh;
+    padding: 2rem 0;
+    z-index: 1;
+    display: block;
+    position: fixed;
+    transform: translate(-100%);
+    transition: var(--transition);
+}
+
+aside.open {
+    transform: translate(0);
+}
+
+.nav-brand {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    transform: rotate(90deg);
+}
+
+.nav-brand span {
+    color: #f26522;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+
+.nav-item.active, .nav-item:hover {
+    border-bottom: 3px solid #f26522;
+}
+
+.sidebar-open, .sidebar-close {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #51535d ;
+    z-index: 0;
+    z-index: 1;
+}
+
+.sidebar-close {
+    position: static;
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+
+.sidebar-open:hover, .sidebar-close:hover {
+    transform: scale(1.1);
+}
+
+aside .nav-item {
+    border-bottom: 3px solid #f26522;
+}
+
+aside .nav-item.active, aside .nav-item:hover{
+    border-bottom: 3px solid black;
+}
+
+@media(min-width: 768px) {
+    header {
+        padding: 50px;
+    }
+    nav {
+        display: block;
+    }
+    aside {
+        display: none;
+    }
+
+    .sidebar-open, .sidebar-close {
+        display: none;
+    }
+
+}
+
+@media (min-width: 1201px) {
+    .nav-brand {
+        right: 5%;
+    }
+}

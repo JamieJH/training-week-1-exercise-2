@@ -1,0 +1,75 @@
+@import url("./variables.css");
+footer {
+    background-color: #323339;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-top: 50px;
+}
+
+footer>div {
+    width: 50%;
+    text-align: center;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    color: #494a56;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer h4 {
+    color: var(--orange);
+}
+
+footer li {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer li:hover {
+    text-decoration: underline;
+}
+
+@media(min-width: 481px) {
+    footer>div {
+        width: 33%;
+        text-align: center;
+    }
+}
+
+@media(min-width: 768px) {
+    footer {
+        justify-content: start;
+        min-height: 50vh;
+        padding: 50px;
+    }
+    footer>div {
+        width: 20%;
+        text-align: start;
+    }
+    .copyright {
+        text-align: left;
+    }
+}
+
+@media(min-width: 992px) {
+    footer>div {
+        width: fit-content;
+        margin-right: 100px;
+    }
+}
+
+@media(min-width: 1201px) {
+    footer {
+        padding: 50px calc(5% + 20px);
+    }
+}

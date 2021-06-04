@@ -1,0 +1,463 @@
+@import url("./variables.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+body {
+    font-family: 'Raleway', sans-serif !important;
+    margin: 0;
+}
+
+body p {
+    font-size: 0.95rem;
+}
+
+.sleek {
+    color: white;
+    width: 300px;
+    position: relative;
+    top: 400px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.dash {
+    font-size: 2rem;
+    margin: 0
+}
+
+.dash.muted {
+    font-weight: 200;
+}
+
+.sleek button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    position: relative;
+    left: 40px;
+    top: 17px;
+    cursor: pointer;
+}
+
+.sleek>button:hover {
+    animation: breath 1s linear infinite;
+}
+
+.direction-btns {
+    position: relative;
+    left: -40px;
+    top: 50px;
+}
+
+.direction-btns button {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 4px 5px;
+    transform: rotate(90deg);
+    transition: all 0.4s ease-in-out;
+}
+
+.direction-btns button:last-child {
+    border-color: var(--orange);
+    color: var(--orange);
+    transform: rotate(0deg);
+}
+
+.direction-btns button:hover {
+    transform: rotate(450deg);
+}
+
+.direction-btns button:last-child:hover {
+    transform: rotate(360deg);
+}
+
+.bright-orange {
+    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/bg-orange.png");
+    background-position: center;
+    background-size: cover;
+    font-size: 0.9rem;
+    /* background: url("../assets/bg-orange.png") var(--orange-trans); */
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.side-orange {
+    color: white;
+    padding: 20px;
+    width: 300px;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.text-container {
+    background-color: white;
+}
+
+.bright-orange-text {
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    color: black;
+}
+
+.bright-orange-text button {
+    border: none;
+    background-color: transparent;
+    color: var(--text-muted);
+    margin-top: 30px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.bright-orange-text i {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+}
+
+.bright-orange-text button:hover>i {
+    transform: scale(1.1);
+}
+
+.melbourne {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.melbourne-left p:first-child {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* WORDS and SUCH Section */
+
+.words {
+    color: white;
+    position: relative;
+}
+
+.words-bg {
+    height: 300px;
+}
+
+.words-bg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.words-header {
+    top: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.words-woman {
+    display: none;
+}
+
+.words-title {
+    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/words-woman.png");
+    background-position: center;
+    background-size: 200px;
+    height: 200px;
+    width: 200px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.words-content {
+    background-color: var(--orange);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+}
+
+.one-side {
+    color: white;
+}
+
+/* Take action */
+
+.form {
+    background: var(--footer);
+    padding: 30px 0;
+}
+
+.form-content {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-content form>* {
+    margin-bottom: 20px;
+    height: 40px;
+    padding: 0 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background-color: white;
+    color: var(--footer);
+}
+
+/* oh this is nice section */
+.nice-bg {
+    display: none;
+}
+
+
+
+@media(min-width: 481px) {
+    .melbourne, .bright-orange-text, .side-orange {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .words-content {
+        padding: 40px calc(50% - 200px);
+    }
+}
+
+@media(min-width: 768px) {
+    .sleek {
+        width: 420px;
+        left: 20px;
+        margin: 0;
+        top: 300px;
+    }
+    .side-orange {
+        background: var(--orange);
+        padding: 20px 30px;
+        width: 250px;
+        height: 64vh;
+        margin: 0;
+    }
+    .bright-orange {
+        position: relative;
+        background: linear-gradient(var(--orange-trans-muted), var(--orange-trans-muted)), url("../assets/bg-orange.png");
+        background-size: cover;
+    }
+    .text-container {
+        position: absolute;
+        bottom: 0;
+        left: 310px;
+        width: calc(100% - 310px);
+        height: 32vh;
+    }
+    .bright-orange-text {
+        margin: 0;
+        width: 85%;
+        padding: 30px;
+    }
+    .melbourne {
+        width: 90%;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .melbourne-content {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .melbourne h1 {
+        width: 100%;
+    }
+    .melbourne-content>div {
+        width: 49%;
+    }
+    /* Words and suchs  */
+    .words-woman {
+        display: inline-block;
+    }
+    .words-bg {
+        height: 400px;
+    }
+    .words-woman img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+    .words-header {
+        display: flex;
+        top: 150px;
+    }
+    .words-title {
+        background-size: 250px;
+        background: var(--orange);
+        height: 250px;
+        width: 250px;
+    }
+    .words-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 5%;
+    }
+    .words-content>div {
+        width: 48%;
+    }
+    /* Take action form */
+    .form-content {
+        width: 90%;
+    }
+    .form-content form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .form-content form>* {
+        width: 45%;
+    }
+}
+
+@media(min-width: 992px) {
+    body {
+        position: relative;
+    }
+    .bright-orange {
+        width: 800px;
+        position: absolute;
+        top: 78vh;
+        right: 0;
+        background-position: right -300px bottom 70px;
+    }
+    .melbourne {
+        margin-top: 37vh;
+        width: calc(100% - 140px);
+    }
+    .nav-brand {
+        top: 4%;
+    }
+    /* Words and Such section */
+    .one-side {
+        width: 90%;
+        margin-left: 10%;
+    }
+    .words-header {
+        left: 10%;
+        transform: translateX(0);
+        top: 250px;
+    }
+    .words-woman img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .words-bg {
+        height: 550px;
+    }
+    .words-title {
+        background-size: 250px;
+        background: var(--orange);
+        height: 300px;
+        width: 300px;
+    }
+    /* take action form  */
+    .form-content form {
+        display: block;
+    }
+    .form-content form>* {
+        display: inline-block;
+        width: 150px;
+    }
+    .form-content form>input:nth-child(3) {
+        width: 200px;
+    }
+    form button {
+        width: 15%;
+    }
+    /* oh this is nice section */
+
+    .this-nice {
+        position: relative;
+        height: 148vh;
+    }
+    .nice-bg {
+        display: block;
+    }
+    .nice-bg img {
+        height: 1000px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .bright-orange.lower {
+        width: 90%;
+        top: 54%;
+        left: 0;
+        background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/bg-nice.png") ;
+        background-repeat: no-repeat;
+        background-position: right 0 bottom 30px;
+    }
+}
+
+@media(min-width: 1201px) {
+    header {
+        padding: 50px 7%;
+    }
+    .bright-orange {
+        width: 980px;
+    }
+
+    .bright-orange.lower {
+        max-width: 1110px;
+        min-width: 80%;
+    }
+    .words-bg {
+        height: 600px;
+    }
+    .melbourne {
+        width: calc(86% - 40px);
+    }
+    .melbourne .melbourne-left {
+        width: 56%;
+    }
+    .melbourne .melbourne-right {
+        width: 42%;
+    }
+    .words-content {
+        padding-right: 9%;
+    }
+    .words-header {
+        top: 250px;
+    }
+    .words-woman img, .words-title {
+        width: 350px;
+        height: 350px;
+    }
+    .words-title h1 {
+        font-size: 3rem;
+    }
+}
+
+@keyframes breath {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

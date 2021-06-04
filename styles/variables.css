@@ -1,0 +1,9 @@
+:root {
+    --orange: #f26522;
+    --orange-trans: #ff5100c5;
+    --orange-trans-muted: #bd460f96;
+    --footer: #323339;
+    --text-muted: #cfcfcf;
+
+    --transition: all 0.2s ease-in-out 
+}
