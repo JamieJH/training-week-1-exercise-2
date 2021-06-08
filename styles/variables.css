@@ -1,9 +1,42 @@
 :root {
+    --white: #ffffff;
+    --black: #000000;
+    --overlay: #41414169;
     --orange: #f26522;
+    --orange-transparent: #df642bd7;
     --orange-trans: #ff5100c5;
     --orange-trans-muted: #bd460f96;
     --footer: #323339;
     --text-muted: #cfcfcf;
 
-    --transition: all 0.2s ease-in-out 
+    --box-shadow: #3c3c3c;
+
+    --tooltip-bg: #424242;
+
+    --sidebar-toggler: #580f0f;
+
+    --transition: all 0.3s ease-in-out ;
+    --transition-longer: all 0.5s ease-in-out ;
+
+    --words-square-sz-sm: 200px;
+    --words-square-sz-md: 300px;
+    --words-square-sz-lg: 400px;
+
+    --linear-gradient-1: #227e58;
+    --linear-gradient-2: #2c4b77;
+
+    --z-index-one: 1;
+    --z-index-two: 2;
+    --z-index-three: 3;
+    --z-index-four: 4;
+}
+
+@font-face {
+    font-family: 'Montserat';
+    src: url("../assets/fonts/Montserrat-Regular.otf");
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../assets/fonts/OpenSans-Regular.ttf");
 }

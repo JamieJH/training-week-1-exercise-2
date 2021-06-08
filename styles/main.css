@@ -5,22 +5,46 @@ body {
     margin: 0;
 }
 
+div {
+    box-sizing: border-box;
+}
+
 body p {
-    font-size: 0.95rem;
+    font-size: 14px;
+    font-family: 'Open Sans';
+}
+
+.overlay {
+    background-color: var(--overlay);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: var(--z-index-two);
+    display: none;
+}
+
+.overlay.show {
+    display: block;
 }
 
 .sleek {
-    color: white;
+    color: var(--white);
     width: 300px;
     position: relative;
-    top: 400px;
+    top: 200px;
     margin: 0 auto;
 }
 
 h1, h2 {
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 200;
     letter-spacing: 2px;
+    font-size: 35px;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 45px;
 }
 
 .dash {
@@ -35,7 +59,7 @@ h1, h2 {
 .sleek button {
     border: none;
     background-color: transparent;
-    color: white;
+    color: var(--white);
     position: relative;
     left: 40px;
     top: 17px;
@@ -53,11 +77,11 @@ h1, h2 {
 }
 
 .direction-btns button {
-    border: 2px solid white;
+    border: 2px solid var(--white);
     border-radius: 50%;
     padding: 4px 5px;
     transform: rotate(90deg);
-    transition: all 0.4s ease-in-out;
+    transition: var(--transition);
 }
 
 .direction-btns button:last-child {
@@ -66,75 +90,123 @@ h1, h2 {
     transform: rotate(0deg);
 }
 
-.direction-btns button:hover {
-    transform: rotate(450deg);
+.direction-btns button img {
+    width: 100%;
+    transition: var(--transition);
 }
 
-.direction-btns button:last-child:hover {
-    transform: rotate(360deg);
+.direction-btns button:hover img {
+    transform: scale(0.7);
 }
+
+/* .direction-btns button:hover {
+    background: linear-gradient(270deg, var(--linear-gradient-1), var(--linear-gradient-1));
+    background-size: 400% 400%;
+    animation: gradient 2s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+} */
 
 .bright-orange {
-    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/bg-orange.png");
+    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/images/bg-orange.png");
     background-position: center;
     background-size: cover;
     font-size: 0.9rem;
     /* background: url("../assets/bg-orange.png") var(--orange-trans); */
 }
 
-h1 {
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: 2rem;
+.bright-orange.lower {
+    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/images/bg-nice.png");
+}
+
+.side-orange, .bright-orange-text {
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .side-orange {
-    color: white;
-    padding: 20px;
-    width: 300px;
+    color: var(--white);
     height: fit-content;
-    margin: 0 auto;
 }
 
 .text-container {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .bright-orange-text {
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto;
-    color: black;
+    color: var(--black);
 }
 
-.bright-orange-text button {
+.tweet-btn {
     border: none;
     background-color: transparent;
     color: var(--text-muted);
     margin-top: 30px;
     text-decoration: underline;
     cursor: pointer;
+    position: relative;
 }
 
-.bright-orange-text i {
+.tweet-btn::after, .tweet-btn::before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) ;
+    opacity: 0;
+    color: var(--white);
+}
+
+.tweet-btn::before {
+    content: attr(data-tooltip);
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: max-content;
+    background-color: var(--tooltip-bg);
+    bottom: 30px;
+    transform-origin: bottom center;
+}
+
+.tweet-btn::after {
+    content: '';
+    height: 0;
+    width: 0%;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid var(--tooltip-bg);
+    bottom: 23px;
+    transform-origin: top center;
+}
+
+.tweet-btn i {
     display: inline-block;
     margin-right: 15px;
     font-size: 1.2rem;
-    transition: all 0.2s ease;
 }
 
-.bright-orange-text button:hover>i {
-    transform: scale(1.1);
+
+.tweet-btn:hover::before, .tweet-btn:hover::after {    
+    animation: tooltip .3s ease forwards;
 }
+
 
 .melbourne {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 30px auto;
 }
 
 .melbourne-left p:first-child {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 18px;
 }
 
 /* WORDS and SUCH Section */
@@ -145,17 +217,15 @@ h1 {
 }
 
 .words-bg {
+    background-image: url("../assets/images/bg-words.png");
     height: 300px;
-}
-
-.words-bg img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .words-header {
-    top: 100px;
+    top: calc(300px - var(--words-square-sz-sm));
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -166,20 +236,24 @@ h1 {
 }
 
 .words-title {
-    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/words-woman.png");
+    background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/images/words-woman.png");
     background-position: center;
-    background-size: 200px;
-    height: 200px;
-    width: 200px;
-    padding: 40px 20px;
+    background-size: var(--words-square-sz-sm);
+    height: var(--words-square-sz-sm);
+    width: var(--words-square-sz-sm);
+    padding: 1px 30px;
     box-sizing: border-box;
+}
+
+.words-title h2 {
+    font-size: 40px;
 }
 
 .words-content {
     background-color: var(--orange);
     display: flex;
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 30px 10%;
 }
 
 .one-side {
@@ -200,11 +274,17 @@ h1 {
 
 .form-content form>* {
     margin-bottom: 20px;
-    height: 40px;
+    height: 50px;
     padding: 0 10px;
     display: block;
     width: 100%;
     box-sizing: border-box;
+    font-family: "Montserat";
+}
+
+.form-content form>*::placeholder {
+    color: var(--text-muted);
+    font-size: 12px;
 }
 
 form button {
@@ -221,20 +301,47 @@ form button:hover {
 }
 
 /* oh this is nice section */
+
 .nice-bg {
     display: none;
 }
 
-
-
 @media(min-width: 481px) {
     .melbourne, .bright-orange-text, .side-orange {
         width: 400px;
-        margin: 0 auto;
     }
 
     .words-content {
         padding: 40px calc(50% - 200px);
+    }
+
+    .sidebar-toggler.open {
+        left: 90px;
+        transform: translateX(-50%);
+    }
+
+    aside ul.nav-links{
+        align-items: flex-start;
+    }
+
+    /* Words and suchs  */
+    .words-woman {
+        display: inline-block;
+    }
+    .words-bg {
+        height: 50vh;
+    }
+    .words-woman img {
+        width: var(--words-square-sz-sm);
+        height: var(--words-square-sz-sm);
+        object-fit: cover;
+    }
+    .words-header {
+        display: flex;
+        top: calc(50vh - var(--words-square-sz-sm));
+    }
+    .words-title {
+        background: var(--orange);
     }
 }
 
@@ -248,31 +355,33 @@ form button:hover {
     .side-orange {
         background: var(--orange);
         padding: 20px 30px;
-        width: 250px;
+        width: 280px;
         height: 64vh;
         margin: 0;
     }
     .bright-orange {
         position: relative;
-        background: linear-gradient(var(--orange-trans-muted), var(--orange-trans-muted)), url("../assets/bg-orange.png");
         background-size: cover;
+        background: linear-gradient(var(--orange-trans-muted), var(--orange-trans-muted)), url("../assets/images/bg-orange.png");
+    }
+    .bright-orange.lower {
+        background: linear-gradient(var(--orange-trans-muted), var(--orange-trans-muted)), url("../assets/images/bg-nice.png");
     }
     .text-container {
         position: absolute;
         bottom: 0;
-        left: 310px;
-        width: calc(100% - 310px);
+        left: 280px;
+        width: calc(100% - 280px);
         height: 32vh;
     }
     .bright-orange-text {
         margin: 0;
-        width: 85%;
-        padding: 30px;
+        width: 100%;
+        padding: 30px 30px 0 30px;
     }
     .melbourne {
-        width: 90%;
-        margin-top: 100px;
-        margin-bottom: 100px;
+        width: calc(100% - 60px);
+        margin: 100px 30px;
     }
     .melbourne-content {
         display: flex;
@@ -283,35 +392,40 @@ form button:hover {
         width: 100%;
     }
     .melbourne-content>div {
-        width: 49%;
+        width: 48%;
     }
     /* Words and suchs  */
     .words-woman {
         display: inline-block;
     }
     .words-bg {
-        height: 400px;
+        height: 50vh;
     }
     .words-woman img {
-        width: 250px;
-        height: 250px;
+        width: var(--words-square-sz-md);
+        height: var(--words-square-sz-md);
         object-fit: cover;
     }
     .words-header {
         display: flex;
-        top: 150px;
+        top: calc(50vh - var(--words-square-sz-md));
+        left: var(--words-square-sz-md);
+        ;
     }
     .words-title {
         background-size: 250px;
         background: var(--orange);
-        height: 250px;
-        width: 250px;
+        height: var(--words-square-sz-md);
+        width: var(--words-square-sz-md);
     }
     .words-content {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 30px 5%;
+        padding: 50px 30px;
+    }
+    .words-title h2 {
+        font-size: 45px;
     }
     .words-content>div {
         width: 48%;
@@ -319,6 +433,7 @@ form button:hover {
     /* Take action form */
     .form-content {
         width: 90%;
+        margin-left: 30px;
     }
     .form-content form {
         display: flex;
@@ -326,7 +441,7 @@ form button:hover {
         justify-content: space-between;
     }
     .form-content form>* {
-        width: 45%;
+        width: 47%;
     }
 }
 
@@ -339,14 +454,11 @@ form button:hover {
         position: absolute;
         top: 78vh;
         right: 0;
-        background-position: right -300px bottom 70px;
+        background-position: right -250px bottom 70px;
     }
     .melbourne {
-        margin-top: 37vh;
+        margin: 37vh auto 60px;
         width: calc(100% - 140px);
-    }
-    .nav-brand {
-        top: 4%;
     }
     /* Words and Such section */
     .one-side {
@@ -356,21 +468,25 @@ form button:hover {
     .words-header {
         left: 10%;
         transform: translateX(0);
-        top: 250px;
+        top: calc(80vh - var(--words-square-sz-lg));
     }
     .words-woman img {
-        width: 300px;
-        height: 300px;
+        width: var(--words-square-sz-lg);
+        height: var(--words-square-sz-lg);
         object-fit: cover;
     }
     .words-bg {
-        height: 550px;
+        height: 80vh;
     }
     .words-title {
         background-size: 250px;
         background: var(--orange);
-        height: 300px;
-        width: 300px;
+        height: var(--words-square-sz-lg);
+        width: var(--words-square-sz-lg);
+        padding: 50px;
+    }
+    .words-title h2 {
+        font-size: 60px;
     }
     /* take action form  */
     .form-content form {
@@ -387,27 +503,22 @@ form button:hover {
         width: 15%;
     }
     /* oh this is nice section */
-
     .this-nice {
         position: relative;
-        height: 148vh;
+        height: 139vh;
     }
     .nice-bg {
+        height: 100vh;
         display: block;
+        background-image: url("../assets/images/bg-circles.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
-    .nice-bg img {
-        height: 1000px;
-        width: 100%;
-        object-fit: cover;
-    }
-
     .bright-orange.lower {
         width: 90%;
         top: 54%;
         left: 0;
-        background: linear-gradient(var(--orange-trans), var(--orange-trans)), url("../assets/bg-nice.png") ;
-        background-repeat: no-repeat;
-        background-position: right 0 bottom 30px;
     }
 }
 
@@ -418,7 +529,6 @@ form button:hover {
     .bright-orange {
         width: 980px;
     }
-
     .bright-orange.lower {
         max-width: 1110px;
         min-width: 80%;
@@ -459,5 +569,17 @@ form button:hover {
     }
     100% {
         transform: scale(1);
+    }
+}
+
+
+@keyframes tooltip {
+    0% {
+        transform: translateX(-50%)  scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%)  scale(1);
+        opacity: 1;
     }
 }

@@ -15,10 +15,12 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a class="nav-brand" href="#">Tra<span>n</span>s</a>
+    <div class="overlay"></div>
 
+    <header>
+        <a class="nav-brand" href="#">Tra<span>n</span>s</a>
+
+        <nav>
             <ul class="nav-links">
                 <li class="nav-item active"><a href="#">about</a></li>
                 <li class="nav-item"><a href="#">Products</a></li>
@@ -27,14 +29,15 @@
             </ul>
         </nav>
 
-        <button class="sidebar-open" title="button to open sidebar">
-            <i class="fas fa-bars"></i>
-        </button>
+
+        <div class="sidebar-toggler">
+            <span class="bar bar-1"></span>
+            <span class="bar bar-2"></span>
+            <span class="bar bar-3"></span>
+            <span class="bar bar-4"></span>
+        </div>
 
         <aside>
-            <button class="sidebar-close" title="button to close sidebar">
-                <i class="fas fa-times"></i>
-            </button>
             <ul class="nav-links">
                 <li class="nav-item active"><a href="#">about</a></li>
                 <li class="nav-item"><a href="#">Products</a></li>
@@ -50,22 +53,22 @@
                 elit, sed do eiusmod tempor incididunt ut labore et dolore
             </p>
             <span class="dash solid">_</span>
-            <button title="see post"><img src="../assets/arrow-right.png" alt="see full post"></button>
+            <button title="see post"><img src="../assets/images/arrow-right.png" alt="see full post"></button>
             <p class="dash muted">_</p>
             <div class="direction-btns">
-                <button title="move down"><img src="../assets/arrow-right.png" alt="move down"></button>
-                <button title="move right"><img src="../assets/arrow-right-orange.png" alt="move right"></button>
+                <button title="move down"><img src="../assets/images/arrow-right.png" alt="move down"></button>
+                <button title="move right"><img src="../assets/images/arrow-right-orange.png" alt="move right"></button>
 
             </div>
         </div>
 
     </header>
 
-    <body>
+    <main>
 
         <div class="bright-orange">
             <div class="side-orange">
-                <h1>Bright ass <br> orange</h1>
+                <h2>Bright ass orange</h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -79,19 +82,19 @@
 
             <div class="text-container">
                 <div class="bright-orange-text">
-                    <h1>finally a layout that blows your head of </h1>
+                    <h2>finally a layout that blows your head of </h2>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
-                    <button><i class="fab fa-twitter"></i>Tweet this shit</button>
+                    <button class="tweet-btn" data-tooltip="Just Tweet it!"><i class="fab fa-twitter"></i>Tweet this shit</button>
 
                 </div>
             </div>
         </div>
 
         <div class="melbourne">
-            <h1>melbourn, australia</h1>
+            <h2>melbourn, australia</h2>
             <div class="melbourne-content">
                 <div class="melbourne-left">
                     <p>
@@ -141,15 +144,14 @@
 
         <div class="words">
             <div class="words-bg">
-                <img src="../assets/bg-words.png" alt="">
             </div>
 
             <div class="words-header">
                 <div class="words-title">
-                    <h1>words & <br> such</h1>
+                    <h2>words & <br> such</h2>
                 </div>
                 <div class="words-woman">
-                    <img src="../assets/words-woman.png" alt="">
+                    <img src="../assets/images/words-woman.png" alt="">
                 </div>
             </div>
 
@@ -203,11 +205,11 @@
 
             <div class="this-nice">
                 <div class="nice-bg">
-                    <img src="../assets/bg-circles.png" alt="background">
+                    <!-- <img src="../assets/images/bg-circles.png" alt="background"> -->
                 </div>
                 <div class="bright-orange lower">
                     <div class="side-orange">
-                        <h1>ohh this <br>is nice </h1>
+                        <h2>ohh this is nice </h2>
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -221,7 +223,7 @@
 
                     <div class="text-container">
                         <div class="bright-orange-text">
-                            <h1>The end is nigh, well thefooter anyways </h1>
+                            <h2>The end is nigh, well thefooter anyways </h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -233,7 +235,7 @@
             </div>
         </div>
 
-    </body>
+    </main>
 
     <footer>
         <div class="quicklinks">

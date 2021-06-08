@@ -5,6 +5,7 @@ footer {
     flex-wrap: wrap;
     padding: 20px;
     padding-top: 50px;
+    font-family: 'Montserat';
 }
 
 footer>div {
@@ -27,7 +28,7 @@ footer h4 {
 }
 
 footer li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 footer a {

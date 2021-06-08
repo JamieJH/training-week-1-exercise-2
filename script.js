@@ -1,17 +1,36 @@
 const links = document.querySelectorAll(".nav-item")
-const openSidebarBtn = document.querySelector(".sidebar-open");
-const closeSidebarBtn = document.querySelector(".sidebar-close");
+const sidebarToggler = document.querySelector(".sidebar-toggler");
 const sidebar = document.querySelector("aside");
+const navbar = document.querySelector("nav");
+const brand = document.querySelector(".nav-brand");
+const overlay = document.querySelector(".overlay")
 
-openSidebarBtn.addEventListener("click", function () {
-    sidebar.classList.add("open");
+sidebarToggler.addEventListener("click", function () {
+    sidebarToggler.classList.toggle("open");
+    sidebar.classList.toggle("open");
+    overlay.classList.add("show")
 });
 
-closeSidebarBtn.addEventListener("click", function () {
+overlay.addEventListener("click", () => {
+    overlay.classList.remove("show")
+    sidebarToggler.classList.remove("open");
     sidebar.classList.remove("open");
-});
+})
 
 
+window.onscroll = () => {floatingNav()}
+
+const floatingNav = () => {
+    // if body or root node
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.classList.add("float")
+        brand.classList.add("float")
+    }
+    else {
+        navbar.classList.remove("float")
+        brand.classList.remove("float")
+    }
+}
 
 links.forEach(link => {
     link.addEventListener("click", () => {
