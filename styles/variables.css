@@ -8,6 +8,7 @@
     --orange-trans-muted: #bd460f96;
     --footer: #323339;
     --text-muted: #cfcfcf;
+    --text-dark: #3a4d69;
 
     --box-shadow: #3c3c3c;
 
@@ -15,8 +16,13 @@
 
     --sidebar-toggler: #580f0f;
 
+    --transition-shorter: all 0.2s ease-in-out ;
     --transition: all 0.3s ease-in-out ;
     --transition-longer: all 0.5s ease-in-out ;
+
+    --words-bg-height-sm: 400px;
+    --words-bg-height-md: 500px;
+    --words-bg-height-lg: 780px;
 
     --words-square-sz-sm: 200px;
     --words-square-sz-md: 300px;
@@ -29,6 +35,9 @@
     --z-index-two: 2;
     --z-index-three: 3;
     --z-index-four: 4;
+
+    --orangecolumn-height-lg: 620px;
+    --orangecolumn-width-lg: 300px;
 }
 
 @font-face {

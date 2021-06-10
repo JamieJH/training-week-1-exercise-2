@@ -4,7 +4,7 @@ header {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    height: 105vh;
+    height: 900px;
     position: relative;
 }
 
@@ -56,7 +56,7 @@ nav.float a {
 header li {
     display: inline-block;
     padding-bottom: 5px;
-    transition: var(--transition);
+    transition: var(--transition-shorter);
     margin-bottom: 50px;
 }
 
@@ -92,6 +92,7 @@ aside.open {
     top: 10%;
     transform: rotate(90deg);
     transition: var(--transition);
+    transform-origin: bottom center;
 }
 
 .nav-brand span {
@@ -213,6 +214,7 @@ aside .nav-item.active, aside .nav-item:hover {
 @media(min-width: 768px) {
     header {
         padding: 50px;
+        height: 1025px;
     }
     nav {
         display: block;
@@ -229,6 +231,9 @@ aside .nav-item.active, aside .nav-item:hover {
         top: 17px;
         right: 7%;
         z-index: var(--z-index-four);
+    }
+    .overlay, .overlay.show {
+        display: none !important;
     }
 }
 

@@ -8,7 +8,7 @@ const overlay = document.querySelector(".overlay")
 sidebarToggler.addEventListener("click", function () {
     sidebarToggler.classList.toggle("open");
     sidebar.classList.toggle("open");
-    overlay.classList.add("show")
+    overlay.classList.toggle("show")
 });
 
 overlay.addEventListener("click", () => {
@@ -22,7 +22,7 @@ window.onscroll = () => {floatingNav()}
 
 const floatingNav = () => {
     // if body or root node
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
         navbar.classList.add("float")
         brand.classList.add("float")
     }

@@ -3,6 +3,7 @@
 body {
     font-family: 'Raleway', sans-serif !important;
     margin: 0;
+    color: var(--text-dark);
 }
 
 div {
@@ -23,16 +24,13 @@ body p {
     display: none;
 }
 
-.overlay.show {
-    display: block;
-}
-
 .sleek {
     color: var(--white);
     width: 300px;
-    position: relative;
-    top: 200px;
-    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
 }
 
 h1, h2 {
@@ -133,6 +131,7 @@ h1 {
     padding: 20px 0;
     width: 80%;
     margin: 0 auto;
+    color: var(--text-dark);
 }
 
 .side-orange {
@@ -142,10 +141,6 @@ h1 {
 
 .text-container {
     background-color: var(--white);
-}
-
-.bright-orange-text {
-    color: var(--black);
 }
 
 .tweet-btn {
@@ -161,9 +156,10 @@ h1 {
 .tweet-btn::after, .tweet-btn::before {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%) ;
+    transform: translateX(-50%);
     opacity: 0;
     color: var(--white);
+    display: none;
 }
 
 .tweet-btn::before {
@@ -193,11 +189,10 @@ h1 {
     font-size: 1.2rem;
 }
 
-
-.tweet-btn:hover::before, .tweet-btn:hover::after {    
+.tweet-btn:hover::before, .tweet-btn:hover::after {
     animation: tooltip .3s ease forwards;
+    display: block;
 }
-
 
 .melbourne {
     width: 80%;
@@ -307,29 +302,28 @@ form button:hover {
 }
 
 @media(min-width: 481px) {
+    .overlay.show {
+        display: block;
+    }
     .melbourne, .bright-orange-text, .side-orange {
         width: 400px;
     }
-
     .words-content {
         padding: 40px calc(50% - 200px);
     }
-
     .sidebar-toggler.open {
         left: 90px;
         transform: translateX(-50%);
     }
-
-    aside ul.nav-links{
+    aside ul.nav-links {
         align-items: flex-start;
     }
-
     /* Words and suchs  */
     .words-woman {
         display: inline-block;
     }
     .words-bg {
-        height: 50vh;
+        height: var(--words-bg-height-sm);
     }
     .words-woman img {
         width: var(--words-square-sz-sm);
@@ -338,7 +332,7 @@ form button:hover {
     }
     .words-header {
         display: flex;
-        top: calc(50vh - var(--words-square-sz-sm));
+        top: calc(var(--words-bg-height-sm) - var(--words-square-sz-sm));
     }
     .words-title {
         background: var(--orange);
@@ -348,15 +342,15 @@ form button:hover {
 @media(min-width: 768px) {
     .sleek {
         width: 420px;
-        left: 20px;
-        margin: 0;
+        left: 70px;
+        transform: translateX(0);
         top: 300px;
     }
     .side-orange {
         background: var(--orange);
         padding: 20px 30px;
-        width: 280px;
-        height: 64vh;
+        width: var(--orangecolumn-width-lg);
+        height: var(--orangecolumn-height-lg);
         margin: 0;
     }
     .bright-orange {
@@ -370,14 +364,14 @@ form button:hover {
     .text-container {
         position: absolute;
         bottom: 0;
-        left: 280px;
-        width: calc(100% - 280px);
-        height: 32vh;
+        left: var(--orangecolumn-width-lg);
+        width: calc(100% - var(--orangecolumn-width-lg));
+        height: calc(var(--orangecolumn-height-lg) / 2);
     }
     .bright-orange-text {
         margin: 0;
         width: 100%;
-        padding: 30px 30px 0 30px;
+        padding: 0 30px;
     }
     .melbourne {
         width: calc(100% - 60px);
@@ -399,7 +393,7 @@ form button:hover {
         display: inline-block;
     }
     .words-bg {
-        height: 50vh;
+        height: var(--words-bg-height-md);
     }
     .words-woman img {
         width: var(--words-square-sz-md);
@@ -408,7 +402,7 @@ form button:hover {
     }
     .words-header {
         display: flex;
-        top: calc(50vh - var(--words-square-sz-md));
+        top: calc(var(--words-bg-height-md) - var(--words-square-sz-md));
         left: var(--words-square-sz-md);
         ;
     }
@@ -443,21 +437,37 @@ form button:hover {
     .form-content form>* {
         width: 47%;
     }
+    .nice-bg {
+        height: var(--words-bg-height-md);
+        display: block;
+        background-image: url("../assets/images/bg-circles.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 }
 
 @media(min-width: 992px) {
     body {
         position: relative;
     }
-    .bright-orange {
-        width: 800px;
+
+    .sleek {
+        left: calc(20px + 7%);
+        top: 330px;
+    }
+    .bright-orange:not(.lower) {
+        width: 955px;
         position: absolute;
-        top: 78vh;
+        top: 815px;
         right: 0;
-        background-position: right -250px bottom 70px;
+        background-position: right -310px bottom 0;
+    }
+    .bright-orange-text {
+        padding-top: 30px;
     }
     .melbourne {
-        margin: 37vh auto 60px;
+        margin: 380px auto 60px;
         width: calc(100% - 140px);
     }
     /* Words and Such section */
@@ -468,7 +478,7 @@ form button:hover {
     .words-header {
         left: 10%;
         transform: translateX(0);
-        top: calc(80vh - var(--words-square-sz-lg));
+        top: calc(var(--words-bg-height-lg) - var(--words-square-sz-lg));
     }
     .words-woman img {
         width: var(--words-square-sz-lg);
@@ -476,7 +486,7 @@ form button:hover {
         object-fit: cover;
     }
     .words-bg {
-        height: 80vh;
+        height: var(--words-bg-height-lg);
     }
     .words-title {
         background-size: 250px;
@@ -505,20 +515,14 @@ form button:hover {
     /* oh this is nice section */
     .this-nice {
         position: relative;
-        height: 139vh;
+        height: calc(var(--words-bg-height-lg) + var(--orangecolumn-height-lg) / 2);
     }
     .nice-bg {
-        height: 100vh;
-        display: block;
-        background-image: url("../assets/images/bg-circles.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+        height: var(--words-bg-height-lg);
     }
     .bright-orange.lower {
         width: 90%;
-        top: 54%;
-        left: 0;
+        bottom: calc(var(--orangecolumn-height-lg) / 2);
     }
 }
 
@@ -526,12 +530,14 @@ form button:hover {
     header {
         padding: 50px 7%;
     }
-    .bright-orange {
-        width: 980px;
+
+    .bright-orange:not(.lower) {
+        width: 1100px;
+        background-position: right -230px bottom 0;
     }
-    .bright-orange.lower {
-        max-width: 1110px;
-        min-width: 80%;
+
+    .bright-orange,{
+        width: 1100px;
     }
     .words-bg {
         height: 600px;
@@ -560,6 +566,15 @@ form button:hover {
     }
 }
 
+@media(min-width: 1501px) {
+    .bright-orange:not(.lower) {
+        width: 1150px;
+        right: 7%;
+        background-position: right -120px bottom 20px;
+    }
+    
+}
+
 @keyframes breath {
     0% {
         transform: scale(1);
@@ -572,14 +587,13 @@ form button:hover {
     }
 }
 
-
 @keyframes tooltip {
     0% {
-        transform: translateX(-50%)  scale(0);
+        transform: translateX(-50%) scale(0);
         opacity: 0;
     }
     100% {
-        transform: translateX(-50%)  scale(1);
+        transform: translateX(-50%) scale(1);
         opacity: 1;
     }
 }
