@@ -65,12 +65,9 @@ footer li:hover {
 @media(min-width: 992px) {
     footer>div {
         width: fit-content;
-        margin-right: 100px;
+        margin-right: 7%;
     }
-}
-
-@media(min-width: 1201px) {
     footer {
-        padding: 50px calc(5% + 20px);
+        padding-left: 10%;
     }
 }

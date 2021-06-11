@@ -263,7 +263,7 @@ h1 {
 }
 
 .form-content {
-    width: 300px;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -337,6 +337,11 @@ form button:hover {
     .words-title {
         background: var(--orange);
     }
+
+    .form-content {
+        width: 400px;
+    }
+    
 }
 
 @media(min-width: 768px) {
@@ -456,12 +461,19 @@ form button:hover {
         left: calc(20px + 7%);
         top: 330px;
     }
+    .bright-orange {
+        width: 90%;
+        max-width: 1100px;
+    }
+    
+    .bright-orange.lower {
+        bottom: calc(var(--orangecolumn-height-lg) / 2);
+    }
     .bright-orange:not(.lower) {
-        width: 955px;
         position: absolute;
         top: 815px;
         right: 0;
-        background-position: right -310px bottom 0;
+        background-position: right -250px bottom 0;
     }
     .bright-orange-text {
         padding-top: 30px;
@@ -520,10 +532,7 @@ form button:hover {
     .nice-bg {
         height: var(--words-bg-height-lg);
     }
-    .bright-orange.lower {
-        width: 90%;
-        bottom: calc(var(--orangecolumn-height-lg) / 2);
-    }
+
 }
 
 @media(min-width: 1201px) {
@@ -531,17 +540,6 @@ form button:hover {
         padding: 50px 7%;
     }
 
-    .bright-orange:not(.lower) {
-        width: 1100px;
-        background-position: right -230px bottom 0;
-    }
-
-    .bright-orange,{
-        width: 1100px;
-    }
-    .words-bg {
-        height: 600px;
-    }
     .melbourne {
         width: calc(86% - 40px);
     }
@@ -554,25 +552,12 @@ form button:hover {
     .words-content {
         padding-right: 9%;
     }
-    .words-header {
-        top: 250px;
-    }
-    .words-woman img, .words-title {
-        width: 350px;
-        height: 350px;
-    }
-    .words-title h1 {
-        font-size: 3rem;
-    }
 }
 
 @media(min-width: 1501px) {
     .bright-orange:not(.lower) {
-        width: 1150px;
         right: 7%;
-        background-position: right -120px bottom 20px;
-    }
-    
+    }    
 }
 
 @keyframes breath {
