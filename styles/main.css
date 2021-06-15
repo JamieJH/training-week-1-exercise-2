@@ -1,5 +1,5 @@
 @import url("./variables.css");
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600&display=swap');
+
 body {
     font-family: 'Raleway', sans-serif !important;
     margin: 0;
@@ -311,13 +311,7 @@ form button:hover {
     .words-content {
         padding: 40px calc(50% - 200px);
     }
-    .sidebar-toggler.open {
-        left: 90px;
-        transform: translateX(-50%);
-    }
-    aside ul.nav-links {
-        align-items: flex-start;
-    }
+
     /* Words and suchs  */
     .words-woman {
         display: inline-block;
@@ -556,7 +550,7 @@ form button:hover {
 
 @media(min-width: 1501px) {
     .bright-orange:not(.lower) {
-        right: 7%;
+        right: 8%;
     }    
 }
 

@@ -1,44 +1,41 @@
-const links = document.querySelectorAll(".nav-item")
-const sidebarToggler = document.querySelector(".sidebar-toggler");
-const sidebar = document.querySelector("aside");
-const navbar = document.querySelector("nav");
-const brand = document.querySelector(".nav-brand");
-const overlay = document.querySelector(".overlay")
 
-sidebarToggler.addEventListener("click", function () {
-    sidebarToggler.classList.toggle("open");
-    sidebar.classList.toggle("open");
-    overlay.classList.toggle("show")
-});
+(function() {
+    var links = document.querySelectorAll(".nav-item")
+    var header = document.querySelector("header")
+    var sidebarToggler = document.querySelector(".sidebar-toggler");
+    var overlay = document.querySelector(".overlay")
 
-overlay.addEventListener("click", () => {
-    overlay.classList.remove("show")
-    sidebarToggler.classList.remove("open");
-    sidebar.classList.remove("open");
-})
-
-
-window.onscroll = () => {floatingNav()}
-
-const floatingNav = () => {
-    // if body or root node
-    if (document.body.scrollTop > 35 || document.documentElement.scrollTop > 35) {
-        navbar.classList.add("float")
-        brand.classList.add("float")
+    sidebarToggler.addEventListener("click", function () {
+        overlay.classList.toggle("show")
+        header.classList.toggle("sidebar")
+    });
+    
+    overlay.addEventListener("click", () => {
+        overlay.classList.remove("show")
+        header.classList.remove("sidebar")
+    })
+    
+    floatingNav = function() {
+        // if body or root node
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            header.classList.add("float")
+        }
+        else {
+            header.classList.remove("float")
+        }
     }
-    else {
-        navbar.classList.remove("float")
-        brand.classList.remove("float")
-    }
-}
+    
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            link.classList.add("active")
 
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        link.classList.add("active")
-        links.forEach(other => {
-            if (other !== link) {
-                other.classList.remove("active")
-            }
+            links.forEach(other => {
+                if (other !== link) {
+                    other.classList.remove("active")
+                }
+            })
         })
     })
-})
+})();
+
+window.onscroll = () => {floatingNav()}
